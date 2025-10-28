@@ -1,0 +1,17 @@
+@model MoodTrackerApp.Models.MoodEntry
+@{
+    ViewData["Title"] = "Mood Entry Details";
+}
+<h1>Mood Entry Details</h1>
+<div class="mood-card">
+    <dl>
+        <dt>Date</dt>
+        <dd>@Model.Date.ToString("yyyy-MM-dd")</dd>
+        <dt>Mood</dt>
+        <dd>@Model.Mood</dd>
+        <dt>Note</dt>
+        <dd>@Model.Note</dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-gradient btn-lg">Edit</a>
+    <a asp-action="Index" class="btn btn-outline-secondary btn-lg ms-2">Back to List</a>
+</div>

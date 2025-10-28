@@ -1,0 +1,22 @@
+@model MoodTrackerApp.Models.MoodEntry
+@{
+    ViewData["Title"] = "Delete Mood Entry";
+}
+<h1>Delete Mood Entry</h1>
+<div class="mood-card">
+    <h4 class="mb-2">Are you sure you want to delete this entry?</h4>
+    <dl>
+        <dt>Date</dt>
+        <dd>@Model.Date.ToString("yyyy-MM-dd")</dd>
+        <dt>Mood</dt>
+        <dd>@Model.Mood</dd>
+        <dt>Note</dt>
+        <dd>@Model.Note</dd>
+    </dl>
+    <form asp-action="Delete" method="post" style="display:inline">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg ms-2">Cancel</a>
+    </form>
+</div>
+

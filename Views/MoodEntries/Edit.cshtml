@@ -1,0 +1,32 @@
+@model MoodTrackerApp.Models.MoodEntry
+@{
+    ViewData["Title"] = "Edit Mood Entry";
+}
+<h1>Edit Mood Entry</h1>
+<form asp-action="Edit" class="mood-form">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Date" class="form-label"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Mood" class="form-label"></label>
+        <select asp-for="Mood" class="form-select">
+            <option>😊 Happy</option>
+            <option>😞 Sad</option>
+            <option>😖 Stressed</option>
+            <option>🤩 Excited</option>
+            <option>😡 Angry</option>
+            <option>😴 Tired</option>
+        </select>
+        <span asp-validation-for="Mood" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Note" class="form-label"></label>
+        <textarea asp-for="Note" class="form-control mood-note-box" rows="6" maxlength="400"></textarea>
+        <span asp-validation-for="Note" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-gradient btn-lg">Update</button>
+    <a asp-action="Index" class="btn btn-outline-secondary btn-lg ms-2">Back to List</a>
+</form>
